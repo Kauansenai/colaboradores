@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página Inicial</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'colaboradores/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo ao Gerenciamento de Colaboradores</h1>
+        <nav>
+            <a href="{% url 'listar_colaboradores' %}">Listar Colaboradores</a>
+            <a href="{% url 'adicionar_colaborador' %}">Adicionar Colaborador</a>
+        </nav>
+    </header>
+    <main>
+        <p>Bem-vindo à página inicial!</p>
+    </main>
+</body>
+</html>

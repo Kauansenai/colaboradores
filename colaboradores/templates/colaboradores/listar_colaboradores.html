@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Colaboradores</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'colaboradores/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Colaboradores</h1>
+        <nav>
+            <a href="{% url 'home' %}">Página Inicial</a>
+            <a href="{% url 'adicionar_colaborador' %}">Adicionar Colaborador</a>
+        </nav>
+    </header>
+    <main>
+        <ul>
+            {% for colaborador in colaboradores %}
+            <li>
+                {{ colaborador.nome }} - {{ colaborador.cargo }} - {{ colaborador.email }}
+                <a href="{% url 'atualizar_colaborador' colaborador.pk %}">Atualizar</a>
+                <a href="{% url 'deletar_colaborador' colaborador.pk %}">Deletar</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </main>
+</body>
+</html>
